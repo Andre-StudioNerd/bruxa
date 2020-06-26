@@ -6,8 +6,8 @@ class Jogo {
   setup() {
     cenario = new Cenario(imagemCenario, 3);
     pontuacao = new Pontuacao()
-    //personagem = new Personagem(matrizInimigo, imagemPersonagem, 0, 30, 110, 135, 220, 270);
-    personagem=new Personagem(imagemPersonagem,matrizInimigo,255, height-240, 50, 50, 96, 96);
+    personagem = new Personagem(matrizInimigo, imagemPersonagem, 0, 30, 110, 135, 220, 270);
+    
     const inimigo = new Inimigo(matrizInimigo, imagemInimigo, width - 52, 30, 52, 52, 104, 104, 10, 100);
     const inimigoVoador = new Inimigo(matrizInimigoVoador, imagemInimigoVoador, width - 52, 200, 100, 75, 200, 150, 10, 100);
     const inimigoGrande = new Inimigo(matrizInimigoGrande, imagemInimigoGrande, width, 0, 200, 200, 400, 400, 15, 100);
