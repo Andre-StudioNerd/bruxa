@@ -6,7 +6,7 @@ function preload() {
   fonteTelaInicial =
     loadFont('imagens/assets/fonteTelaInicial.otf');
   imagemPersonagem =
-    loadImage('imagens/inimigos/seiya_corre.png');
+    loadImage('imagens/inimigos/seiya.png');
   imagemInimigo =
     loadImage('imagens/inimigos/gotinha.png');
   imagemInimigoGrande =
