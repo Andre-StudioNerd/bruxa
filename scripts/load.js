@@ -1,6 +1,6 @@
 function preload() {
   imagemCenario =
-    loadImage('imagens/cenario/floresta.png');
+    loadImage('imagens/cenario/fundo_game.png');
   imagemTelaInicial =
     loadImage('imagens/cenario/telaInicial.png');
   fonteTelaInicial =
@@ -16,7 +16,7 @@ function preload() {
   imagemGameOver =
     loadImage('imagens/assets/game-over.png');
   somDoJogo =
-    loadSound('sons/trilha_jogo.mp3');
+    loadSound('sons/intro.mp3');
   somDoPulo =
-    loadSound('sons/somPulo.mp3');
+    loadSound('sons/jump.mp3');
 }
