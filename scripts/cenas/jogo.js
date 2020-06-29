@@ -8,9 +8,9 @@ class Jogo {
     pontuacao = new Pontuacao();
 
      
-    personagem = new Personagem(matrizSeiya, imagemPersonagem, 255,100, 50, 50, 90, 90);
+    personagem = new Personagem(matrizSeiya, imagemPersonagem, 255,150, 50, 50, 90, 90);
     
-    const inimigo = new Inimigo(matrizInimigo, imagemInimigo, width - 52, 30, 52, 52, 104, 104, 10, 100);
+    const inimigo = new Inimigo(matrizInimigo, imagemInimigo, width - 52, 150, 52, 52, 104, 104, 10, 100);
     const inimigoVoador = new Inimigo(matrizInimigoVoador, imagemInimigoVoador, width - 52, 200, 100, 75, 200, 150, 10, 100);
     const inimigoGrande = new Inimigo(matrizInimigoGrande, imagemInimigoGrande, width, 0, 200, 200, 400, 400, 15, 100);
 
