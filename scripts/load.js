@@ -2,7 +2,7 @@ function preload() {
   imagemCenario =
     loadImage('imagens/cenario/fundo_game.png');
   imagemTelaInicial =
-    loadImage('imagens/cenario/telaInicial.png');
+    loadImage('imagens/assets/telainicial.png');
   fonteTelaInicial =
     loadFont('imagens/assets/fonteTelaInicial.otf');
   imagemPersonagem =
