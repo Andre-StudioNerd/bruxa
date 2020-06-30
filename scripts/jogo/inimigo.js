@@ -1,16 +1,54 @@
-class Inimigo extends Animacao {
-  constructor(matriz, imagem, x, variacaoY, largura, altura, larguraSprite, alturaSprite, velocidade, delay) {
-    super(matriz, imagem, x, variacaoY, largura, altura, larguraSprite, alturaSprite)
-
-    this.velocidade = velocidade
-    this.delay = delay
-    this.x = width + this.delay
+class Inimigo extends Animacao{
+  constructor(matriz, imagem, posicaoX, posicaoY, larguraPersonagem, alturaPersonagem, larguraSprite, alturaSprite, isVoador, velociadeMinima ){
+    super(matriz, imagem, posicaoX, posicaoY, larguraPersonagem, alturaPersonagem, larguraSprite, alturaSprite);
+    this.velocidadeMinima = velociadeMinima;
+    this.velocidade = velociadeMinima;
+    this.velocidadeInicial = velociadeMinima;
+    this.isVoador = isVoador;
+    this.morrendo = false;
   }
-
-  move() {
-    this.x = this.x - this.velocidade;
-    if (this.x < -this.largura - this.delay) {
-      this.x = width
+  
+  move(){
+    this.anima();
+    this.posicaoX -= this.velocidade;
+  }
+  
+  exibe(){
+    if( this.morrendo ){
+      this.posicaoY += this.velocidade;
     }
+    if(! this.morrendo || (frameCount % 10) > 4){
+      super.exibe();
+    }
+  }
+  
+  saiuDaTela(){
+    var saiu =  ( this.posicaoX < - this.larguraPersonagem ) || this.posicaoY > height;
+    if( saiu ){
+      this.morrendo = false;
+    }
+    return saiu;
+  }
+  
+  mudaVelocidade(){
+    //console.log('Minima: ' + this.velocidade + '; Velocidade: '+ this.velocidade); 
+    this.velocidade = random(this.velocidadeMinima, this.velocidadeMaxima());
+  }
+  
+  aumentaDificuldade(){
+    this.velocidadeMinima *= 1.2;
+  }
+  
+  reinicia(){
+    this.velocidade = this.velocidadeMinima;
+    this.posicaoX = width;
+  }
+  
+  morre(){
+    this.morrendo = true;
+  }
+  
+  velocidadeMaxima(){
+    return this.velocidadeMinima + 10;
   }
 }
